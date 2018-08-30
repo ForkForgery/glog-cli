@@ -174,7 +174,7 @@ class GraylogAPI(object):
         url = "search/universal/"
         range_args = {}
 
-        if filter is None and self.default_stream is not None:
+        if filter is None and self.default_stream is not None and self.default_stream != '*':
             filter = "streams:{}".format(self.default_stream)
 
         if search_range.is_relative():
